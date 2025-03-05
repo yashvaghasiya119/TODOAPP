@@ -7,6 +7,7 @@ const cors = require("cors")
 const { checklogin } = require("./middelweres/auth")
 const { applyTimestamps } = require("./models/user")
 const cookieParser = require("cookie-parser")
+const port = process.env.PORT
 
 async function connect(){
     // await mongoose.connect("mongodb://localhost:27017/tododata")
@@ -28,6 +29,6 @@ app.use("/" , (req,res)=>{
 app.use("/user" , userroute )
 app.use("/todo" , checklogin,todoroute )
 
-app.listen( 5000 , () => {
+app.listen( port , () => {
     console.log(`Server listening on` )}
 )
