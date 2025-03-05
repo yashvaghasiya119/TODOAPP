@@ -3,17 +3,7 @@ const route = express.Router()
 const usermodel = require("../models/user")
 const jwt = require("jsonwebtoken")
 
-// route.post("/signup" , async (req,res)=>{
-//     const {name,email,password} = req.body
-//     let find = await usermodel.findOne({email:email})
-//     if(find){
-//         res.json({msg:"user alread exist" , success:false})
-//     }
-//     let cre = await usermodel.create({
-//         name,email,password
-//     })
-//     res.json({msg:"success signup" , success:true})
-// })
+
 route.get("/sp" , (req,res)=>{
     return res.status(200).send("login")
 })

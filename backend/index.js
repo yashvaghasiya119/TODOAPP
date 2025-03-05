@@ -31,6 +31,16 @@ app.use("/" , (req,res)=>{
 })
 app.use("/user" , userroute )
 app.use("/todo" , checklogin,todoroute )
+route.get("/allworks", async (req, res) => {
+    try {
+      const finddata = await todomodel.find({createdby: new mongoose.Types.ObjectId(req.user.id)}).lean().populate("createdby");
+      
+      return res.json({ data: finddata });
+    } catch (error) {
+      console.error('Error fetching tasks:', error);
+      return res.status(500).json({ msg: 'Error fetching tasks' });
+    }
+  })
 
 app.listen( port , () => {
     console.log(`Server listening on` )}
