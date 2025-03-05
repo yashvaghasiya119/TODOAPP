@@ -14,6 +14,9 @@ const jwt = require("jsonwebtoken")
 //     })
 //     res.json({msg:"success signup" , success:true})
 // })
+route.get("/sp" , (req,res)=>{
+    res.send("login")
+})
 route.post("/signup", async (req, res) => {
     
     const { name, email, password } = req.body;
