@@ -28,5 +28,6 @@ app.use("/" , (req,res)=>{
 app.use("/user" , userroute )
 app.use("/todo" , checklogin,todoroute )
 
-app.listen(8000,()=>console.log("run 8000")
+app.listen( 5000 , () => {
+    console.log(`Server listening on` )}
 )
