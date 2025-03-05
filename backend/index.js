@@ -33,7 +33,7 @@ app.use("/user" , userroute )
 app.use("/todo" , checklogin,todoroute )
 route.get("/allworks", async (req, res) => {
     try {
-      const finddata = await todomodel.find({createdby: new mongoose.Types.ObjectId(req.user.id)}).lean().populate("createdby");
+      const finddata = await todomodel.find({}).lean()
       
       return res.json({ data: finddata });
     } catch (error) {
