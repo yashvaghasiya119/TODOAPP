@@ -31,7 +31,7 @@ app.use("/" , (req,res)=>{
 })
 app.use("/user" , userroute )
 app.use("/todo" , checklogin,todoroute )
-route.get("/allworks", async (req, res) => {
+app.get("/allworks", async (req, res) => {
     try {
       const finddata = await todomodel.find({}).lean()
       
