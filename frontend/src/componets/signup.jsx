@@ -13,7 +13,7 @@ export function Signup() {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        const response = await fetch('https://todoapp-8bvh.vercel.app/api/user/signup', {
+        const response = await fetch('https://todoapp-seven-lime.vercel.app/api/user/signup', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

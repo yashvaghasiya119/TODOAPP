@@ -12,7 +12,7 @@ export function Data() {
  const data = {work,date}
     async function handleSubmit(e){
         e.preventDefault()
-        const responce = await fetch("https://todoapp-8bvh.vercel.app/api/todo",{
+        const responce = await fetch("https://todoapp-seven-lime.vercel.app/api/todo",{
             method:"POST",
             headers:{
                 "Content-Type":"application/json"
@@ -34,7 +34,7 @@ export function Data() {
         
     }
     async function response2(){
-        const res2 = await fetch("https://todoapp-8bvh.vercel.app/api/todo/api/checkLoginStatus", {
+        const res2 = await fetch("https://todoapp-seven-lime.vercel.app/api/todo/api/checkLoginStatus", {
             credentials: 'include',
         });
         const res2json = await res2.json()
