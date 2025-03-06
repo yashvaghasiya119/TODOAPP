@@ -30,12 +30,12 @@ app.use(express.json())
 app.use("/data" , (req,res)=>{
     return res.json({user:"yash" , age:19})
 })
-app.get('/',(req,res)=>{
+app.get('/api',(req,res)=>{
   return res.send("Hello server");
 })
-app.use("/user" , userroute )
-app.use("/todo" , checklogin,todoroute )
-app.get("/allworks", async (req, res) => {
+app.use("/api/user" , userroute )
+app.use("/api/todo" , checklogin,todoroute )
+app.get("/api/allworks", async (req, res) => {
     try {
       const finddata = await todomodel.find({}).lean()
       
