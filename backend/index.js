@@ -7,13 +7,17 @@ const cors = require("cors")
 const { checklogin } = require("./middelweres/auth")
 const { applyTimestamps } = require("./models/user")
 const cookieParser = require("cookie-parser")
-const port = process.env.PORT
+const port = process.env.PORT || 8000
 
 async function connect(){
     // await mongoose.connect("mongodb://localhost:27017/tododata")
-    await mongoose.connect("mongodb+srv://yashvaghasiya360:O5cuhkcb9Z04iIfe@cluster0.n6jim.mongodb.net/todo")
+    await mongoose.connect("mongodb+srv://yashbhai:Z2BiDoyTRbYs6kG0@yash1.7gmhw.mongodb.net/?retryWrites=true&w=majority&appName=yash1")
 }
-connect()
+connect().then(()=>{
+  console.log("DB connectd")
+}).catch((e)=>{
+  console.log(e);
+})
 // app.use(cors())
 
 app.use(cors({
@@ -26,9 +30,7 @@ app.use(express.json())
 app.use("/data" , (req,res)=>{
     return res.json({user:"yash" , age:19})
 })
-app.use("/" , (req,res)=>{
-    return res.send("hello")
-})
+
 app.use("/user" , userroute )
 app.use("/todo" , checklogin,todoroute )
 app.get("/allworks", async (req, res) => {
