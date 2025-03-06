@@ -30,6 +30,10 @@ app.use(express.json())
 app.use("/data" , (req,res)=>{
     return res.json({user:"yash" , age:19})
 })
+app.get('/', (req, res) => {
+  res.send("Server Running...")
+})
+
 app.get('/api',(req,res)=>{
   return res.send("Hello server");
 })
