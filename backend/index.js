@@ -20,10 +20,7 @@ connect().then(()=>{
 })
 // app.use(cors())
 
-app.use(cors({
-    origin: 'https://todoappfr.vercel.app', // Your frontend domain (can be adjusted)
-    credentials: true, // Allow sending cookies with requests
-}));
+app.use(cors());
 app.use(cookieParser()  )
 app.use(express.urlencoded({extended:true}))
 app.use(express.json())
