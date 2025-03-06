@@ -5,7 +5,7 @@ const jwt = require("jsonwebtoken")
 
 
 route.get("/sp" , (req,res)=>{
-    return res.status(200).send("login")
+    return res.status(200).json({msg:"hello sp"})
 })
 route.post("/signup", async (req, res) => {
     
