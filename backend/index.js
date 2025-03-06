@@ -21,7 +21,7 @@ connect().then(()=>{
 // app.use(cors())
 
 app.use(cors({
-    origin: 'http://localhost:5173', // Your frontend domain (can be adjusted)
+    origin: 'https://todoappfr.vercel.app', // Your frontend domain (can be adjusted)
     credentials: true, // Allow sending cookies with requests
 }));
 app.use(cookieParser()  )
